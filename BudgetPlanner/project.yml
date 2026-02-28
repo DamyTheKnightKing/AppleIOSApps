@@ -5,7 +5,7 @@ options:
     iOS: "17.0"
 settings:
   base:
-    PRODUCT_BUNDLE_IDENTIFIER: com.yourname.budgetplanner
+    PRODUCT_BUNDLE_IDENTIFIER: com.damytheknightking.budgetplanner.local
     GENERATE_INFOPLIST_FILE: YES
     SWIFT_VERSION: 5.10
     CURRENT_PROJECT_VERSION: 1
@@ -35,7 +35,7 @@ targets:
       - target: BudgetPlanner
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.yourname.budgetplanner.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.damytheknightking.budgetplanner.local.tests
         GENERATE_INFOPLIST_FILE: YES
 schemes:
   BudgetPlanner:
