@@ -6,6 +6,8 @@ options:
 settings:
   base:
     PRODUCT_BUNDLE_IDENTIFIER: com.damytheknightking.budgetplanner.local
+    DEVELOPMENT_TEAM: 954H68SH4A
+    CODE_SIGN_STYLE: Automatic
     GENERATE_INFOPLIST_FILE: YES
     SWIFT_VERSION: 5.10
     CURRENT_PROJECT_VERSION: 1
@@ -25,6 +27,9 @@ targets:
     settings:
       base:
         PRODUCT_NAME: BudgetPlanner
+        DEVELOPMENT_TEAM: 954H68SH4A
+        CODE_SIGN_STYLE: Automatic
+        PROVISIONING_PROFILE_SPECIFIER: ""
     dependencies: []
   BudgetPlannerTests:
     type: bundle.unit-test
