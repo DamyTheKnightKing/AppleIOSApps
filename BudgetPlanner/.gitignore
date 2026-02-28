@@ -3,3 +3,6 @@ build/
 DerivedData/
 *.xcworkspace
 xcuserdata/
+.derivedData/
+.derivedData-sim/
+BudgetPlanner 2.xcodeproj/
