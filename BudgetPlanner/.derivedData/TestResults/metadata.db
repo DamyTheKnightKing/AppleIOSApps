@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<integer>1</integer>
+	<key>Store</key>
+	<dict>
+		<key>BudgetPlannerTests</key>
+		<dict>
+			<key>BudgetStoreAnalyticsTests</key>
+			<dict>
+				<key>testCategoryComparisonCurrentVsPrevious_SortsByLargestChange</key>
+				<dict>
+					<key>mrnet</key>
+					<real>19.494967937469482</real>
+				</dict>
+				<key>testCurrentVsPreviousMonthSummary_UsesReferenceDate</key>
+				<dict>
+					<key>mrnet</key>
+					<real>0.010684013366699219</real>
+				</dict>
+				<key>testForecastNextMonthSpend_CombinesTrendAndRecurringBaseline</key>
+				<dict>
+					<key>mrnet</key>
+					<real>0.0055179595947265625</real>
+				</dict>
+				<key>testMonthlySpendSeries_ReturnsChronologicalPoints</key>
+				<dict>
+					<key>mrnet</key>
+					<real>0.0026049613952636719</real>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
