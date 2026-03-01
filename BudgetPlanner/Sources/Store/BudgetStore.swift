@@ -2,7 +2,11 @@ import Foundation
 
 final class BudgetStore: NSObject, ObservableObject {
     @Published var categories: [BudgetCategory] = []
-    @Published var expenses: [Expense] = []
+    @Published var expenses: [Expense] = [] {
+        didSet {
+            invalidateCurrentMonthCache()
+        }
+    }
     @Published var recurringExpenses: [RecurringExpense] = []
 
     @Published var monthlyIncome: Double = 5000
@@ -26,6 +30,11 @@ final class BudgetStore: NSObject, ObservableObject {
     private let cloudExpensesKey = "cloud.expenses"
     private let cloudRecurringKey = "cloud.recurring"
     private let cloudProfileKey = "cloud.profile"
+
+    private var currentMonthCacheKey: String?
+    private var currentMonthExpensesCache: [Expense] = []
+    private var currentMonthTotalByCategoryCache: [UUID: Double] = [:]
+    private var currentMonthTotalSpendCache: Double = 0
 
     struct Profile: Codable {
         var monthlyIncome: Double
@@ -171,12 +180,13 @@ final class BudgetStore: NSObject, ObservableObject {
     }
 
     func expensesForCurrentMonth() -> [Expense] {
-        let cal = Calendar.current
-        return expenses.filter { cal.isDate($0.date, equalTo: .now, toGranularity: .month) }
+        ensureCurrentMonthCache()
+        return currentMonthExpensesCache
     }
 
     func spentThisMonth() -> Double {
-        expensesForCurrentMonth().reduce(0) { $0 + $1.amount }
+        ensureCurrentMonthCache()
+        return currentMonthTotalSpendCache
     }
 
     func totalBudget() -> Double {
@@ -190,9 +200,8 @@ final class BudgetStore: NSObject, ObservableObject {
     }
 
     func categorySpent(_ categoryID: UUID) -> Double {
-        expensesForCurrentMonth()
-            .filter { $0.categoryID == categoryID }
-            .reduce(0) { $0 + $1.amount }
+        ensureCurrentMonthCache()
+        return currentMonthTotalByCategoryCache[categoryID, default: 0]
     }
 
     func remainingBudget(for categoryID: UUID) -> Double {
@@ -201,8 +210,11 @@ final class BudgetStore: NSObject, ObservableObject {
     }
 
     func sortedCategoriesBySpend() -> [(category: BudgetCategory, spent: Double)] {
-        categories
-            .map { ($0, categorySpent($0.id)) }
+        ensureCurrentMonthCache()
+        return categories
+            .map { category in
+                (category, currentMonthTotalByCategoryCache[category.id, default: 0])
+            }
             .sorted { $0.1 > $1.1 }
     }
 
@@ -442,6 +454,51 @@ final class BudgetStore: NSObject, ObservableObject {
         return expenses
             .filter { interval.contains($0.date) }
             .reduce(0) { $0 + $1.amount }
+    }
+
+    private func currentMonthKey(referenceDate: Date, calendar: Calendar) -> String {
+        let comps = calendar.dateComponents([.year, .month], from: referenceDate)
+        let year = comps.year ?? 0
+        let month = comps.month ?? 0
+        return "\(year)-\(month)"
+    }
+
+    private func ensureCurrentMonthCache(referenceDate: Date = .now) {
+        let calendar = Calendar.current
+        let key = currentMonthKey(referenceDate: referenceDate, calendar: calendar)
+        guard currentMonthCacheKey != key else {
+            return
+        }
+
+        guard let interval = calendar.dateInterval(of: .month, for: referenceDate) else {
+            currentMonthCacheKey = key
+            currentMonthExpensesCache = []
+            currentMonthTotalByCategoryCache = [:]
+            currentMonthTotalSpendCache = 0
+            return
+        }
+
+        var monthExpenses: [Expense] = []
+        var totalsByCategory: [UUID: Double] = [:]
+        var totalSpend: Double = 0
+
+        for expense in expenses where interval.contains(expense.date) {
+            monthExpenses.append(expense)
+            totalsByCategory[expense.categoryID, default: 0] += expense.amount
+            totalSpend += expense.amount
+        }
+
+        currentMonthCacheKey = key
+        currentMonthExpensesCache = monthExpenses
+        currentMonthTotalByCategoryCache = totalsByCategory
+        currentMonthTotalSpendCache = totalSpend
+    }
+
+    private func invalidateCurrentMonthCache() {
+        currentMonthCacheKey = nil
+        currentMonthExpensesCache = []
+        currentMonthTotalByCategoryCache = [:]
+        currentMonthTotalSpendCache = 0
     }
 
     private func categoryTotals(forMonthStart monthStart: Date, calendar: Calendar) -> [UUID: Double] {

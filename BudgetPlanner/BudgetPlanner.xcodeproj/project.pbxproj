@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		3B867E5E44ABD437B09D96ED /* SavingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520F7E6AB68DC37BFEFD15E /* SavingsTip.swift */; };
 		3E029677D23AAC9BC90E5F70 /* BudgetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F31D2A5D0823F0B580427 /* BudgetStore.swift */; };
 		3E6DBA722E30AF4A3B0A9687 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D9A080A269B0A03C624C5 /* DashboardView.swift */; };
+		4A5EB429ADEA9739300A2242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA8AFBEF2FF5B0AF164AAD6 /* Assets.xcassets */; };
 		4C35B70212CE5E89C854757A /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7516FA69FC78DAD53883337 /* AddExpenseView.swift */; };
 		542445A47334DD7FAD8E6FAB /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEDE28B1C39900E391F54D2 /* InsightsView.swift */; };
 		5DB8B8C7282B94C75872C098 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07577901FB827954A9EA1BB /* ExportService.swift */; };
@@ -43,7 +44,7 @@
 /* Begin PBXFileReference section */
 		0BEDE28B1C39900E391F54D2 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		15BFA309B14B8495229DD297 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		218FBEFF7783E39B3EEA5EC5 /* BudgetPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		218FBEFF7783E39B3EEA5EC5 /* BudgetPlanner.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BudgetPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		312F31D2A5D0823F0B580427 /* BudgetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetStore.swift; sourceTree = "<group>"; };
 		3AFFAE70A3A4530459F503FB /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		48DC03DE3AC2F121298F9591 /* BudgetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategory.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		56FCE51E3A59689155ED3BCB /* RecurringExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringExpense.swift; sourceTree = "<group>"; };
 		77C9DB6273EA2C032536939D /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		871A56FF5AA7301F78CAEEEF /* SummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCard.swift; sourceTree = "<group>"; };
+		8BA8AFBEF2FF5B0AF164AAD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E712570981739434EBCF0B9 /* BudgetStoreAnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetStoreAnalyticsTests.swift; sourceTree = "<group>"; };
 		A07577901FB827954A9EA1BB /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
 		A520F7E6AB68DC37BFEFD15E /* SavingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTip.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		C689E8CA131038A560349455 /* AnalyticsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsModels.swift; sourceTree = "<group>"; };
 		C73129CCE6267A4C2D70672F /* BudgetPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPlannerApp.swift; sourceTree = "<group>"; };
 		D7516FA69FC78DAD53883337 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
-		E4536DF0D1AD3E55F489D624 /* BudgetPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4536DF0D1AD3E55F489D624 /* BudgetPlannerTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BudgetPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB39EB3576B2547953B1D313 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F02FD238FCEB2ACCA3E95FF3 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		F8AFA83B692910A5482A12A3 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		8818490C83BDEC3F99C46861 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8BA8AFBEF2FF5B0AF164AAD6 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildConfigurationList = FF4415E20AB3F3AD0412A376 /* Build configuration list for PBXNativeTarget "BudgetPlanner" */;
 			buildPhases = (
 				3D7796C86B84CAA4222486B8 /* Sources */,
+				4CDC5B97D9FD68CA12A56B5D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -222,7 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					0336C710B263DFD8A4A449D1 = {
 						DevelopmentTeam = 954H68SH4A;
@@ -244,6 +248,7 @@
 			);
 			mainGroup = D8633B2206B713C4605987BE;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -252,6 +257,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CDC5B97D9FD68CA12A56B5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5EB429ADEA9739300A2242 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D7796C86B84CAA4222486B8 /* Sources */ = {
@@ -304,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -340,7 +357,6 @@
 				DEVELOPMENT_TEAM = 954H68SH4A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -362,7 +378,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.damytheknightking.budgetplanner.local;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.1;
@@ -408,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -444,7 +460,6 @@
 				DEVELOPMENT_TEAM = 954H68SH4A;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -473,7 +488,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.damytheknightking.budgetplanner.local;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.1;

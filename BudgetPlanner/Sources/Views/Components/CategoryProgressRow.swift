@@ -20,7 +20,7 @@ struct CategoryProgressRow: View {
                     .foregroundStyle(.secondary)
             }
 
-            ProgressView(value: min(max(usage, 0), 1.2))
+            ProgressView(value: min(max(usage, 0), 1.0))
                 .tint(usage > 1 ? .red : category.color)
 
             if usage > 1 {

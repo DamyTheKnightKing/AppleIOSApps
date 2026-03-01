@@ -9,6 +9,21 @@ struct AddExpenseView: View {
     @State private var date: Date = .now
     @State private var showConfirmation = false
     @State private var showAddCategory = false
+    private let quickAmounts: [Double] = [10, 25, 50, 100]
+
+    private var recentNotes: [String] {
+        Array(
+            Set(
+                store.expenses
+                    .map(\.note)
+                    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                    .filter { !$0.isEmpty }
+            )
+        )
+        .sorted()
+        .prefix(6)
+        .map { $0 }
+    }
 
     var body: some View {
         NavigationStack {
@@ -28,9 +43,37 @@ struct AddExpenseView: View {
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
 
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(quickAmounts, id: \.self) { value in
+                                Button(value.asCurrency()) {
+                                    amount = String(format: "%.2f", value)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                    }
+
                     DatePicker("Date", selection: $date, displayedComponents: .date)
 
                     TextField("Note (optional)", text: $note)
+                }
+
+                if !recentNotes.isEmpty {
+                    Section("Recent Notes") {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                ForEach(recentNotes, id: \.self) { item in
+                                    Button(item) {
+                                        note = item
+                                    }
+                                    .buttonStyle(.bordered)
+                                }
+                            }
+                            .padding(.vertical, 4)
+                        }
+                    }
                 }
 
                 Section {
